@@ -61,7 +61,7 @@ function ProjectCardInner({ project }: ProjectCardInnerProps) {
       style={{ willChange: 'transform' }}
     >
       {/* Browser chrome gradient header */}
-      <div className={`h-36 relative bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+      <div className={`h-40 relative bg-gradient-to-br ${project.gradient} overflow-hidden`}>
         {/* Subtle diagonal stripe pattern for depth */}
         <div
           className="absolute inset-0 opacity-[0.06]"
@@ -153,7 +153,7 @@ export function Projects() {
     <Section id="projects">
       <SectionLabel>Портфолио</SectionLabel>
       <SectionTitle>Что я построил</SectionTitle>
-      <p className="text-text-dim text-lg max-w-2xl mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mb-16">
         Реальные продукты в production. Не учебные проекты — рабочий бизнес.
       </p>
 

@@ -16,8 +16,8 @@ export function Section({ id, children, className = '', fullWidth }: SectionProp
       id={id}
       ref={ref}
       className={`
-        ${fullWidth ? '' : 'max-w-6xl mx-auto px-6 md:px-10'}
-        py-32 md:py-44
+        ${fullWidth ? '' : 'max-w-5xl mx-auto px-6 md:px-12'}
+        py-36 md:py-52
         transition-all duration-1000 ease-out
         ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
         ${className}
@@ -30,7 +30,7 @@ export function Section({ id, children, className = '', fullWidth }: SectionProp
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-3 mb-6">
+    <div className="flex items-center gap-3 mb-5">
       <div className="w-8 h-px bg-cyan" />
       <span className="font-display text-xs tracking-[0.2em] uppercase text-cyan">
         {children}
@@ -41,7 +41,7 @@ export function SectionLabel({ children }: { children: ReactNode }) {
 
 export function SectionTitle({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <h2 className={`font-display font-bold text-3xl md:text-4xl lg:text-5xl text-text mb-10 tracking-tight ${className}`}>
+    <h2 className={`font-display font-bold text-3xl md:text-4xl lg:text-5xl text-text mb-6 leading-relaxed tracking-tight ${className}`}>
       {children}
     </h2>
   )

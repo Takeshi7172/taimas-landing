@@ -76,11 +76,11 @@ export function AuraSystem() {
 
       <SectionLabel>Секретное оружие</SectionLabel>
       <SectionTitle>AURA System</SectionTitle>
-      <p className="text-text-dim text-lg max-w-3xl mb-6">
+      <p className="text-text-dim text-lg leading-loose max-w-3xl mb-8">
         Я построил AI-систему из <span className="text-cyan font-semibold">30+ специализированных агентов</span>.
         Она оркестрирует разработку, маркетинг, продажи и операции.
       </p>
-      <p className="text-text-dim text-lg max-w-3xl mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-3xl mb-20">
         <span className="text-amber">Вот почему я могу делать 7-10 лендингов в день.</span>
       </p>
 

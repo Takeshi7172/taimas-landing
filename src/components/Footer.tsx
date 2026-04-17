@@ -43,7 +43,7 @@ function GithubButton() {
 
 export function Footer() {
   return (
-    <footer className="relative pt-44 pb-32 overflow-hidden">
+    <footer className="relative pt-52 pb-32 overflow-hidden">
       {/* Background effects */}
       <div className="mesh-orb w-[500px] h-[500px] bg-cyan/10 bottom-[-20%] left-[30%]" style={{ animationDelay: '-4s' }} />
 
@@ -61,7 +61,7 @@ export function Footer() {
             <span className="gradient-text">твоего продукта</span>
           </h2>
 
-          <p className="font-body text-lg text-text-dim max-w-xl mx-auto mb-12">
+          <p className="font-body text-lg text-text-dim max-w-xl mx-auto mb-14">
             Напиши — и я покажу на деле, а не на словах.
           </p>
 
@@ -83,7 +83,7 @@ export function Footer() {
           </div>
 
           {/* Built with badge */}
-          <div className="mt-16 pt-8 border-t border-border/30">
+          <div className="mt-20 pt-8 border-t border-border/30">
             <span className="font-display text-[10px] tracking-[0.3em] text-text-muted uppercase">
               Built with AI in <span className="text-cyan">{'<'}1 hour</span> — это и есть vibe coding
             </span>

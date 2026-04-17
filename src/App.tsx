@@ -66,13 +66,11 @@ function App() {
         <WhyMe />
         <SectionDivider reversed />
         <Journey />
-        <SectionDivider />
         <Projects />
-        <SectionDivider reversed />
-        <AuraSystem />
         <SectionDivider />
-        <TechStack />
+        <AuraSystem />
         <SectionDivider reversed />
+        <TechStack />
         <Clients />
         <SectionDivider />
         <About />

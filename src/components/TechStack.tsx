@@ -61,7 +61,7 @@ export function TechStack() {
     <Section id="stack">
       <SectionLabel>Инструменты</SectionLabel>
       <SectionTitle>Tech Stack</SectionTitle>
-      <p className="text-text-dim text-lg max-w-2xl mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mb-16">
         Полный стек от дизайна до деплоя. Маркетинг + разработка + AI в одном человеке.
       </p>
 

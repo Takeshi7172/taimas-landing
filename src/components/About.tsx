@@ -19,7 +19,7 @@ export function About() {
       <SectionLabel>Обо мне</SectionLabel>
       <SectionTitle>Человек за системой</SectionTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-12">
         {/* Left: details */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -85,7 +85,7 @@ export function About() {
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 <span className="font-display text-sm font-semibold text-text">Маркетолог который кодит</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-relaxed pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
                 Не просто кодер — маркетолог с 4-летним опытом. Понимаю воронки, конверсии, A/B тесты.
                 Каждый лендинг строю с точки зрения результата, не красоты ради красоты.
               </p>
@@ -95,7 +95,7 @@ export function About() {
                 <div className="w-1.5 h-1.5 rounded-full bg-amber" />
                 <span className="font-display text-sm font-semibold text-text">AI как мультипликатор</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-relaxed pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
                 Не использую AI как костыль. Построил целую систему оркестрации из 30+ агентов.
                 Каждый агент — специалист в своей области. Вместе — непобедимая команда.
               </p>
@@ -105,7 +105,7 @@ export function About() {
                 <div className="w-1.5 h-1.5 rounded-full bg-lavender" />
                 <span className="font-display text-sm font-semibold text-text">Скорость без жертв</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-relaxed pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
                 Быстро не значит плохо. TypeScript strict, SEO, Schema.org, аналитика — всё по дефолту.
                 Каждый сайт готов к работе с первого деплоя.
               </p>
@@ -115,7 +115,7 @@ export function About() {
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 <span className="font-display text-sm font-semibold text-text">Build in public</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-relaxed pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
                 Открытый GitHub. Реальные продукты. Не пустые слова — код который можно посмотреть.
               </p>
             </div>

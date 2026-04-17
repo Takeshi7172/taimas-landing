@@ -141,7 +141,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5 mb-10"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5 mb-12"
         >
           <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
           <span className="font-display text-xs tracking-wider text-cyan">OPEN TO WORK</span>
@@ -152,7 +152,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter mb-6"
+          className="font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter mb-8"
         >
           <span className="text-text">ТАЙМ</span>
           <span className="gradient-text">АС</span>
@@ -163,7 +163,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="mb-8"
+          className="mb-10"
         >
           <span className="font-display text-xl md:text-2xl lg:text-3xl font-light tracking-wide">
             <span className="text-cyan">VIBE CODER</span>
@@ -177,7 +177,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="font-body text-lg md:text-xl text-text-dim max-w-2xl mx-auto mb-14 leading-relaxed"
+          className="font-body text-lg md:text-xl text-text-dim max-w-2xl mx-auto mb-16 leading-relaxed"
         >
           4 года в маркетинге. От графического дизайна до AI-системы из 30+ агентов.
           <br />
@@ -200,7 +200,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95 }}
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-sm md:max-w-none mx-auto"
+          className="mt-28 glass rounded-2xl px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-sm md:max-w-none mx-auto"
         >
           {stats.map((stat, i) => (
             <StatCounter key={stat.label} {...stat} delay={i * 150} />

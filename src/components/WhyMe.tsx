@@ -92,7 +92,7 @@ export function WhyMe() {
     <Section id="why">
       <SectionLabel>Идеальный матч</SectionLabel>
       <SectionTitle>Почему я</SectionTitle>
-      <p className="text-text-dim text-lg max-w-2xl mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mb-16">
         Не просто кодер. Маркетолог, который научился строить — и построил систему, которая строит за него.
       </p>
 
@@ -114,7 +114,7 @@ export function WhyMe() {
                   {card.icon}
                 </div>
                 <h3 className="font-display font-bold text-lg tracking-wide text-text mb-4">{card.title}</h3>
-                <p className="font-body text-[15px] text-text-dim leading-relaxed">{card.description}</p>
+                <p className="font-body text-[15px] text-text-dim leading-loose">{card.description}</p>
               </TiltCard>
             </motion.div>
           )

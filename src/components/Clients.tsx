@@ -96,7 +96,7 @@ export function Clients() {
       <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-text mb-8 tracking-tight">
         Реальные клиенты, реальные результаты
       </h2>
-      <p className="text-text-dim text-lg max-w-2xl mb-14">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mb-16">
         Казахстанский бизнес. Реальные задачи. Реальный production.
       </p>
 
@@ -107,14 +107,12 @@ export function Clients() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="glass rounded-xl px-8 py-6 flex flex-wrap justify-center gap-10 mb-14"
+        className="glass rounded-xl px-10 py-8 flex flex-wrap justify-center gap-10 mb-16"
       >
         <StatItem end={15} suffix="+" label="клиентов" delay={0} enabled={statsInView} />
         <StatItem end={6} suffix="" label="ниш" delay={150} enabled={statsInView} />
         <StatItem end={3} suffix="" label="города KZ" delay={300} enabled={statsInView} />
       </motion.div>
-
-      <p className="font-body text-text-muted text-sm mb-8">Избранные кейсы:</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {clients.map((client, i) => (
@@ -155,7 +153,7 @@ export function Clients() {
                 <span className="font-display text-[10px] tracking-wider text-text-muted uppercase">
                   Что сделал
                 </span>
-                <p className="font-body text-text-dim mt-1">{client.work}</p>
+                <p className="font-body text-text-dim leading-relaxed mt-1">{client.work}</p>
               </div>
 
               {/* Result */}
@@ -163,7 +161,7 @@ export function Clients() {
                 <span className="font-display text-[10px] tracking-wider text-text-muted uppercase">
                   Результат
                 </span>
-                <p className="font-body text-text-dim mt-1">{client.result}</p>
+                <p className="font-body text-text-dim leading-relaxed mt-1">{client.result}</p>
               </div>
             </TiltCard>
           </motion.div>
@@ -176,7 +174,7 @@ export function Clients() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="glass rounded-xl px-6 py-5 mt-10"
+        className="glass rounded-xl px-8 py-6 mt-12"
       >
         <p className="font-body text-text-muted text-xs mb-3">Также работал с:</p>
         <div className="flex flex-wrap gap-2.5">
@@ -197,7 +195,7 @@ export function Clients() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.35 }}
-        className="font-body text-text-muted text-sm text-center mt-14"
+        className="font-body text-text-muted text-sm text-center mt-16"
       >
         Каждый проект — от стратегии до результата. Без шаблонов.
       </motion.p>
