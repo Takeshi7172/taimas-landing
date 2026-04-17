@@ -29,7 +29,7 @@ export function Section({ id, children, className = '', fullWidth, alt, spacing 
         id={id}
         ref={ref}
         className={`
-          ${fullWidth ? '' : 'max-w-4xl mx-auto px-6 md:px-12'}
+          ${fullWidth ? '' : 'max-w-5xl mx-auto px-6 md:px-12'}
           ${spacingClasses[spacing]}
           transition-all duration-1000 ease-out
           ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}

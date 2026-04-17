@@ -108,13 +108,15 @@ export function WhyMe() {
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
               <TiltCard
-                className={`group glass rounded-2xl p-8 md:p-10 transition-all duration-500 ${colors.border} ${colors.glow} cursor-default text-center`}
+                className={`group glass rounded-2xl p-8 md:p-10 transition-all duration-500 ${colors.border} ${colors.glow} cursor-default`}
               >
-                <div className={`w-14 h-14 rounded-xl ${colors.bg} flex items-center justify-center mb-6 ${colors.icon} mx-auto`}>
-                  {card.icon}
+                <div className="flex flex-col items-center text-center">
+                  <div className={`w-14 h-14 rounded-xl ${colors.bg} flex items-center justify-center mb-6 ${colors.icon}`}>
+                    {card.icon}
+                  </div>
+                  <h3 className="font-display font-bold text-lg tracking-wide text-text mb-4">{card.title}</h3>
+                  <p className="font-body text-[15px] text-text-dim leading-loose">{card.description}</p>
                 </div>
-                <h3 className="font-display font-bold text-lg tracking-wide text-text mb-4">{card.title}</h3>
-                <p className="font-body text-[15px] text-text-dim leading-loose">{card.description}</p>
               </TiltCard>
             </motion.div>
           )
