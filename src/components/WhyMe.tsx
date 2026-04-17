@@ -1,0 +1,125 @@
+import { motion } from 'motion/react'
+import { Section, SectionLabel, SectionTitle } from './Section'
+import { useTilt } from '../hooks/useTilt'
+import type { ReactNode } from 'react'
+
+const cards = [
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      </svg>
+    ),
+    title: 'СКОРОСТЬ',
+    description: '7-10 лендингов в день? Это мой стандартный режим. AI-агентная система AURA делает это реальностью.',
+    accent: 'cyan',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      </svg>
+    ),
+    title: 'МАРКЕТИНГ В ДНК',
+    description: '4 года опыта: таргет, Google Ads, аналитика. Я не просто верстаю — я понимаю что конвертит.',
+    accent: 'amber',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+      </svg>
+    ),
+    title: 'ВАЙБ > БУМАЖКИ',
+    description: 'Без ТЗ? Идеально. Я ловлю суть продукта и превращаю в лендинг быстрее, чем ты допьёшь кофе.',
+    accent: 'lavender',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+      </svg>
+    ),
+    title: 'A/B МЫШЛЕНИЕ',
+    description: 'Бывший таргетолог. Знаю какие элементы тестировать и почему одна версия бьёт другую.',
+    accent: 'cyan',
+  },
+]
+
+const accentColors = {
+  cyan: {
+    border: 'group-hover:border-cyan/40',
+    glow: 'group-hover:shadow-[0_0_40px_#00F0FF22]',
+    icon: 'text-cyan',
+    bg: 'bg-cyan/10',
+  },
+  amber: {
+    border: 'group-hover:border-amber/40',
+    glow: 'group-hover:shadow-[0_0_40px_#FFB80022]',
+    icon: 'text-amber',
+    bg: 'bg-amber/10',
+  },
+  lavender: {
+    border: 'group-hover:border-lavender/40',
+    glow: 'group-hover:shadow-[0_0_40px_#8B5CF622]',
+    icon: 'text-lavender',
+    bg: 'bg-lavender/10',
+  },
+}
+
+interface TiltCardProps {
+  children: ReactNode
+  className?: string
+}
+
+function TiltCard({ children, className = '' }: TiltCardProps) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt({ maxDeg: 5 })
+  return (
+    <div
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      className={className}
+      style={{ willChange: 'transform' }}
+    >
+      {children}
+    </div>
+  )
+}
+
+export function WhyMe() {
+  return (
+    <Section id="why">
+      <SectionLabel>Идеальный матч</SectionLabel>
+      <SectionTitle>Почему я</SectionTitle>
+      <p className="text-text-dim text-lg max-w-2xl mb-16">
+        Не просто кодер. Маркетолог, который научился строить — и построил систему, которая строит за него.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {cards.map((card, i) => {
+          const colors = accentColors[card.accent as keyof typeof accentColors]
+          return (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.12 }}
+            >
+              <TiltCard
+                className={`group glass rounded-2xl p-8 transition-all duration-500 ${colors.border} ${colors.glow} cursor-default`}
+              >
+                <div className={`w-14 h-14 rounded-xl ${colors.bg} flex items-center justify-center mb-5 ${colors.icon}`}>
+                  {card.icon}
+                </div>
+                <h3 className="font-display font-bold text-lg tracking-wide text-text mb-3">{card.title}</h3>
+                <p className="font-body text-text-dim leading-relaxed">{card.description}</p>
+              </TiltCard>
+            </motion.div>
+          )
+        })}
+      </div>
+    </Section>
+  )
+}
