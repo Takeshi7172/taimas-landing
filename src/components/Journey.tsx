@@ -48,7 +48,7 @@ const steps = [
 
 export function Journey() {
   return (
-    <Section id="journey" alt>
+    <Section id="journey" alt spacing="lg">
       <SectionLabel>Путь</SectionLabel>
       <SectionTitle>
         <span className="gradient-text">Эволюция</span>
@@ -72,7 +72,7 @@ export function Journey() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
-              className={`relative flex items-start mb-20 last:mb-0 ${
+              className={`relative flex items-start mb-16 last:mb-0 ${
                 isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
               } flex-row`}
             >

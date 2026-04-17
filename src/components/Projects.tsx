@@ -150,10 +150,10 @@ function ProjectCardInner({ project }: ProjectCardInnerProps) {
 
 export function Projects() {
   return (
-    <Section id="projects">
+    <Section id="projects" spacing="md">
       <SectionLabel>Портфолио</SectionLabel>
       <SectionTitle>Что я построил</SectionTitle>
-      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-12">
         Реальные продукты в production. Не учебные проекты — рабочий бизнес.
       </p>
 

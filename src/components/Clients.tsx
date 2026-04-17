@@ -91,7 +91,7 @@ export function Clients() {
   const { ref: statsRef, isInView: statsInView } = useInView(0.3)
 
   return (
-    <Section id="clients" alt>
+    <Section id="clients" alt spacing="md">
       <SectionLabel>Клиенты</SectionLabel>
       <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-text mb-8 tracking-tight text-center">
         Реальные клиенты, реальные результаты
@@ -107,7 +107,7 @@ export function Clients() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="glass rounded-xl px-10 py-8 flex flex-wrap justify-center gap-10 mb-16"
+        className="glass rounded-xl px-10 py-8 flex flex-wrap justify-center gap-10 mb-12"
       >
         <StatItem end={15} suffix="+" label="клиентов" delay={0} enabled={statsInView} />
         <StatItem end={6} suffix="" label="ниш" delay={150} enabled={statsInView} />
@@ -174,7 +174,7 @@ export function Clients() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="glass rounded-xl px-8 py-6 mt-12"
+        className="glass rounded-xl px-8 py-6 mt-10"
       >
         <p className="font-body text-text-muted text-xs mb-3 text-center">Также работал с:</p>
         <div className="flex flex-wrap gap-2.5 justify-center">

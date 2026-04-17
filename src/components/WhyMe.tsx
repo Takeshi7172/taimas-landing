@@ -89,10 +89,10 @@ function TiltCard({ children, className = '' }: TiltCardProps) {
 
 export function WhyMe() {
   return (
-    <Section id="why">
+    <Section id="why" spacing="md">
       <SectionLabel>Идеальный матч</SectionLabel>
       <SectionTitle>Почему я</SectionTitle>
-      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-12">
         Не просто кодер. Маркетолог, который научился строить — и построил систему, которая строит за него.
       </p>
 

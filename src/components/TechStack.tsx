@@ -58,14 +58,14 @@ function TiltCard({ children, className = '' }: TiltCardProps) {
 
 export function TechStack() {
   return (
-    <Section id="stack">
+    <Section id="stack" spacing="sm">
       <SectionLabel>Инструменты</SectionLabel>
       <SectionTitle>Tech Stack</SectionTitle>
-      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-10">
         Полный стек от дизайна до деплоя. Маркетинг + разработка + AI в одном человеке.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {stackGroups.map((group, groupIdx) => (
           <motion.div
             key={group.label}
@@ -74,7 +74,7 @@ export function TechStack() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: groupIdx * 0.08 }}
           >
-            <TiltCard className="glass rounded-xl p-7 md:p-8 glass-hover transition-all duration-500 h-full">
+            <TiltCard className="glass rounded-xl p-6 md:p-7 glass-hover transition-all duration-500 h-full">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-1 h-5 rounded-full" style={{ backgroundColor: group.color }} />
                 <h3 className="font-display font-semibold text-sm tracking-wider" style={{ color: group.color }}>

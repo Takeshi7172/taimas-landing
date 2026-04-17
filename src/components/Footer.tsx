@@ -43,7 +43,9 @@ function GithubButton() {
 
 export function Footer() {
   return (
-    <footer className="relative pt-52 pb-32 overflow-hidden">
+    <footer className="relative pt-40 pb-24 overflow-hidden">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-light/60 to-transparent" />
       {/* Background effects */}
       <div className="mesh-orb w-[500px] h-[500px] bg-cyan/10 bottom-[-20%] left-[30%]" style={{ animationDelay: '-4s' }} />
 

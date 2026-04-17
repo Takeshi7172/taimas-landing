@@ -67,7 +67,7 @@ function TiltTeamCard({ children, className = '' }: TiltCardProps) {
 
 export function AuraSystem() {
   return (
-    <Section id="aura" alt>
+    <Section id="aura" alt spacing="lg">
       {/* Background accent */}
       <div className="absolute inset-0 -z-10">
         <div className="mesh-orb w-[600px] h-[600px] bg-cyan/8 top-[20%] left-[-10%]" style={{ animationDelay: '-3s' }} />
