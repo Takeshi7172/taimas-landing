@@ -43,7 +43,7 @@ function GithubButton() {
 
 export function Footer() {
   return (
-    <footer className="relative py-32 overflow-hidden">
+    <footer className="relative pt-44 pb-32 overflow-hidden">
       {/* Background effects */}
       <div className="mesh-orb w-[500px] h-[500px] bg-cyan/10 bottom-[-20%] left-[30%]" style={{ animationDelay: '-4s' }} />
 

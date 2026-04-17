@@ -72,7 +72,7 @@ export function Journey() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
-              className={`relative flex items-start mb-16 last:mb-0 ${
+              className={`relative flex items-start mb-20 last:mb-0 ${
                 isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
               } flex-row`}
             >
@@ -81,7 +81,7 @@ export function Journey() {
 
               {/* Content card */}
               <div className={`ml-14 md:ml-0 md:w-[45%] ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
-                <div className="glass rounded-xl p-6 glass-hover transition-all duration-500">
+                <div className="glass rounded-xl p-7 md:p-8 glass-hover transition-all duration-500">
                   <div className={`flex items-center gap-3 mb-3 ${isLeft ? 'md:justify-end' : 'md:justify-start'}`}>
                     <span
                       className="font-display font-bold text-sm tracking-wider"
@@ -90,8 +90,8 @@ export function Journey() {
                       {step.year}
                     </span>
                   </div>
-                  <h3 className="font-display font-semibold text-xl text-text mb-2">{step.title}</h3>
-                  <p className="font-body text-text-dim mb-4">{step.desc}</p>
+                  <h3 className="font-display font-semibold text-xl text-text mb-3">{step.title}</h3>
+                  <p className="font-body text-text-dim mb-5">{step.desc}</p>
                   <div className={`flex flex-wrap gap-2 ${isLeft ? 'md:justify-end' : 'md:justify-start'}`}>
                     {step.tags.map((tag) => (
                       <span key={tag} className="tag">{tag}</span>

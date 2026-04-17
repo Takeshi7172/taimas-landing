@@ -93,7 +93,7 @@ export function AuraSystem() {
         className="relative"
       >
         {/* Central Jarvis node */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-8">
           <div className="relative">
             <div
               className="w-28 h-28 rounded-2xl border-2 border-cyan/60 bg-void-light flex items-center justify-center relative z-10"
@@ -111,7 +111,7 @@ export function AuraSystem() {
         </div>
 
         {/* Animated connection lines */}
-        <div className="flex justify-center gap-3 mb-8">
+        <div className="flex justify-center gap-3 mb-10">
           {agentTeams.map((team, i) => (
             <DataFlowLine key={team.name} color={team.color} delay={i * 0.35} />
           ))}
@@ -127,7 +127,7 @@ export function AuraSystem() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: teamIdx * 0.1 }}
             >
-              <TiltTeamCard className="glass rounded-xl p-5 md:p-6 glass-hover transition-all duration-500 h-full">
+              <TiltTeamCard className="glass rounded-xl p-6 md:p-7 glass-hover transition-all duration-500 h-full">
                 <div className="flex items-center gap-2 mb-4">
                   <motion.div
                     className="w-2 h-2 rounded-full"
@@ -139,7 +139,7 @@ export function AuraSystem() {
                     {team.name}
                   </h3>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   {team.agents.map((agent, agentIdx) => (
                     <motion.div
                       key={agent}
@@ -154,7 +154,7 @@ export function AuraSystem() {
                     </motion.div>
                   ))}
                 </div>
-                <div className="mt-3 pt-3 border-t border-border/50">
+                <div className="mt-4 pt-4 border-t border-border/50">
                   <span className="font-display text-[10px] tracking-wider text-text-muted">
                     {team.agents.length} AGENTS
                   </span>
@@ -170,7 +170,7 @@ export function AuraSystem() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-14 text-center"
+          className="mt-16 text-center"
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border bg-void-light">
             <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />

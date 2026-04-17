@@ -41,7 +41,7 @@ export function SectionLabel({ children }: { children: ReactNode }) {
 
 export function SectionTitle({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <h2 className={`font-display font-bold text-3xl md:text-4xl lg:text-5xl text-text mb-8 tracking-tight ${className}`}>
+    <h2 className={`font-display font-bold text-3xl md:text-4xl lg:text-5xl text-text mb-10 tracking-tight ${className}`}>
       {children}
     </h2>
   )

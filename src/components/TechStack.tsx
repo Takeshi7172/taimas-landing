@@ -74,18 +74,18 @@ export function TechStack() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: groupIdx * 0.08 }}
           >
-            <TiltCard className="glass rounded-xl p-6 glass-hover transition-all duration-500 h-full">
-              <div className="flex items-center gap-2 mb-5">
+            <TiltCard className="glass rounded-xl p-7 md:p-8 glass-hover transition-all duration-500 h-full">
+              <div className="flex items-center gap-2 mb-6">
                 <div className="w-1 h-5 rounded-full" style={{ backgroundColor: group.color }} />
                 <h3 className="font-display font-semibold text-sm tracking-wider" style={{ color: group.color }}>
                   {group.label}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="font-display text-xs px-3 py-2 rounded-md bg-void-lighter border border-border text-text-dim hover:text-text hover:border-border-light transition-all duration-300 cursor-default"
+                    className="font-display text-xs px-3.5 py-2.5 rounded-md bg-void-lighter border border-border text-text-dim hover:text-text hover:border-border-light transition-all duration-300 cursor-default"
                   >
                     {item}
                   </span>

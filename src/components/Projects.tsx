@@ -130,15 +130,15 @@ function ProjectCardInner({ project }: ProjectCardInnerProps) {
         </div>
       </div>
 
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-2">
+      <div className="p-7">
+        <div className="flex items-center justify-between mb-3">
           <h3 className="font-display font-bold text-xl text-text group-hover:text-cyan transition-colors">
             {project.name}
           </h3>
           <span className="font-display text-xs text-text-muted tracking-wider">{project.type}</span>
         </div>
-        <p className="font-body text-text-dim mb-4 leading-relaxed">{project.description}</p>
-        <div className="flex flex-wrap gap-1.5">
+        <p className="font-body text-text-dim mb-5 leading-relaxed">{project.description}</p>
+        <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span key={tag} className="tag">{tag}</span>
           ))}

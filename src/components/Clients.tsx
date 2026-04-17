@@ -93,10 +93,10 @@ export function Clients() {
   return (
     <Section id="clients">
       <SectionLabel>Клиенты</SectionLabel>
-      <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-text mb-6 tracking-tight">
+      <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-text mb-8 tracking-tight">
         Реальные клиенты, реальные результаты
       </h2>
-      <p className="text-text-dim text-lg max-w-2xl mb-12">
+      <p className="text-text-dim text-lg max-w-2xl mb-14">
         Казахстанский бизнес. Реальные задачи. Реальный production.
       </p>
 
@@ -107,14 +107,14 @@ export function Clients() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="glass rounded-xl px-8 py-6 flex flex-wrap justify-center gap-10 mb-10"
+        className="glass rounded-xl px-8 py-6 flex flex-wrap justify-center gap-10 mb-14"
       >
         <StatItem end={15} suffix="+" label="клиентов" delay={0} enabled={statsInView} />
         <StatItem end={6} suffix="" label="ниш" delay={150} enabled={statsInView} />
         <StatItem end={3} suffix="" label="города KZ" delay={300} enabled={statsInView} />
       </motion.div>
 
-      <p className="font-body text-text-muted text-sm mb-12">Избранные кейсы:</p>
+      <p className="font-body text-text-muted text-sm mb-8">Избранные кейсы:</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {clients.map((client, i) => (
@@ -125,9 +125,9 @@ export function Clients() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.12 }}
           >
-            <TiltCard className="glass rounded-xl p-6 glass-hover transition-all duration-500 h-full">
+            <TiltCard className="glass rounded-xl p-7 md:p-8 glass-hover transition-all duration-500 h-full">
               {/* Header */}
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex items-start justify-between mb-5">
                 <div>
                   <h3 className="font-display font-bold text-lg text-text">{client.name}</h3>
                   <span className="font-body text-sm text-text-muted">{client.city}</span>
@@ -146,12 +146,12 @@ export function Clients() {
 
               {/* Divider */}
               <div
-                className="w-full h-px mb-4"
+                className="w-full h-px mb-5"
                 style={{ background: `linear-gradient(90deg, ${client.color}33, transparent)` }}
               />
 
               {/* Work */}
-              <div className="mb-3">
+              <div className="mb-4">
                 <span className="font-display text-[10px] tracking-wider text-text-muted uppercase">
                   Что сделал
                 </span>
@@ -176,14 +176,14 @@ export function Clients() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="glass rounded-xl px-6 py-5 mt-8"
+        className="glass rounded-xl px-6 py-5 mt-10"
       >
         <p className="font-body text-text-muted text-xs mb-3">Также работал с:</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {otherNiches.map((niche) => (
             <span
               key={niche}
-              className="font-body text-xs text-text-muted px-3 py-1 rounded-full border border-white/10 bg-white/5"
+              className="font-body text-xs text-text-muted px-3.5 py-1.5 rounded-full border border-white/10 bg-white/5"
             >
               {niche}
             </span>
@@ -197,7 +197,7 @@ export function Clients() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.35 }}
-        className="font-body text-text-muted text-sm text-center mt-12"
+        className="font-body text-text-muted text-sm text-center mt-14"
       >
         Каждый проект — от стратегии до результата. Без шаблонов.
       </motion.p>
