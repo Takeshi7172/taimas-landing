@@ -67,7 +67,7 @@ function TiltTeamCard({ children, className = '' }: TiltCardProps) {
 
 export function AuraSystem() {
   return (
-    <Section id="aura">
+    <Section id="aura" alt>
       {/* Background accent */}
       <div className="absolute inset-0 -z-10">
         <div className="mesh-orb w-[600px] h-[600px] bg-cyan/8 top-[20%] left-[-10%]" style={{ animationDelay: '-3s' }} />
@@ -76,11 +76,11 @@ export function AuraSystem() {
 
       <SectionLabel>Секретное оружие</SectionLabel>
       <SectionTitle>AURA System</SectionTitle>
-      <p className="text-text-dim text-lg leading-loose max-w-3xl mb-8">
+      <p className="text-text-dim text-lg leading-loose max-w-3xl mx-auto text-center mb-8">
         Я построил AI-систему из <span className="text-cyan font-semibold">30+ специализированных агентов</span>.
         Она оркестрирует разработку, маркетинг, продажи и операции.
       </p>
-      <p className="text-text-dim text-lg leading-loose max-w-3xl mb-20">
+      <p className="text-text-dim text-lg leading-loose max-w-3xl mx-auto text-center mb-20">
         <span className="text-amber">Вот почему я могу делать 7-10 лендингов в день.</span>
       </p>
 

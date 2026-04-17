@@ -91,12 +91,12 @@ export function Clients() {
   const { ref: statsRef, isInView: statsInView } = useInView(0.3)
 
   return (
-    <Section id="clients">
+    <Section id="clients" alt>
       <SectionLabel>Клиенты</SectionLabel>
-      <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-text mb-8 tracking-tight">
+      <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-text mb-8 tracking-tight text-center">
         Реальные клиенты, реальные результаты
       </h2>
-      <p className="text-text-dim text-lg leading-loose max-w-2xl mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-16">
         Казахстанский бизнес. Реальные задачи. Реальный production.
       </p>
 
@@ -176,8 +176,8 @@ export function Clients() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="glass rounded-xl px-8 py-6 mt-12"
       >
-        <p className="font-body text-text-muted text-xs mb-3">Также работал с:</p>
-        <div className="flex flex-wrap gap-2.5">
+        <p className="font-body text-text-muted text-xs mb-3 text-center">Также работал с:</p>
+        <div className="flex flex-wrap gap-2.5 justify-center">
           {otherNiches.map((niche) => (
             <span
               key={niche}

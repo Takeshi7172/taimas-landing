@@ -153,7 +153,7 @@ export function Projects() {
     <Section id="projects">
       <SectionLabel>Портфолио</SectionLabel>
       <SectionTitle>Что я построил</SectionTitle>
-      <p className="text-text-dim text-lg leading-loose max-w-2xl mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-16">
         Реальные продукты в production. Не учебные проекты — рабочий бизнес.
       </p>
 

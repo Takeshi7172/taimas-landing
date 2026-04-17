@@ -10,7 +10,6 @@ import { TechStack } from './components/TechStack'
 import { Clients } from './components/Clients'
 import { About } from './components/About'
 import { Footer } from './components/Footer'
-import { SectionDivider } from './components/SectionDivider'
 import { useCursorGlow } from './hooks/useCursorGlow'
 
 const BOOT_DURATION = 1400
@@ -62,17 +61,12 @@ function App() {
       >
         <Nav />
         <Hero />
-        <SectionDivider />
         <WhyMe />
-        <SectionDivider reversed />
         <Journey />
         <Projects />
-        <SectionDivider />
         <AuraSystem />
-        <SectionDivider reversed />
         <TechStack />
         <Clients />
-        <SectionDivider />
         <About />
         <Footer />
       </motion.div>

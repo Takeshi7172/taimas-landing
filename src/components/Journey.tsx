@@ -48,12 +48,12 @@ const steps = [
 
 export function Journey() {
   return (
-    <Section id="journey">
+    <Section id="journey" alt>
       <SectionLabel>Путь</SectionLabel>
       <SectionTitle>
         <span className="gradient-text">Эволюция</span>
       </SectionTitle>
-      <p className="text-text-dim text-lg leading-loose max-w-2xl mb-16">
+      <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-16">
         От пикселей до AI-систем. Каждый этап — фундамент для следующего.
       </p>
 
