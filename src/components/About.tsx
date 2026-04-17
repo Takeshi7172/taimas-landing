@@ -19,7 +19,6 @@ export function About() {
       <SectionLabel>Обо мне</SectionLabel>
       <SectionTitle>Человек за системой</SectionTitle>
 
-      <div className="max-w-4xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-12">
         {/* Left: details */}
         <motion.div
@@ -122,7 +121,6 @@ export function About() {
             </div>
           </div>
         </motion.div>
-      </div>
       </div>
     </Section>
   )

@@ -135,7 +135,7 @@ export function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

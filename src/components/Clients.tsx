@@ -114,7 +114,7 @@ export function Clients() {
         <StatItem end={3} suffix="" label="города KZ" delay={300} enabled={statsInView} />
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {clients.map((client, i) => (
           <motion.div
             key={client.name}

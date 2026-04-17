@@ -118,7 +118,7 @@ export function AuraSystem() {
         </div>
 
         {/* Agent teams grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {agentTeams.map((team, teamIdx) => (
             <motion.div
               key={team.name}
