@@ -123,9 +123,9 @@ export function Clients() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.12 }}
           >
-            <TiltCard className="glass rounded-xl p-7 md:p-8 glass-hover transition-all duration-500 h-full">
+            <TiltCard className="glass rounded-xl p-7 md:p-8 glass-hover transition-all duration-500 h-full text-center">
               {/* Header */}
-              <div className="flex items-start justify-between mb-5">
+              <div className="flex flex-col items-center gap-2 mb-5">
                 <div>
                   <h3 className="font-display font-bold text-lg text-text">{client.name}</h3>
                   <span className="font-body text-sm text-text-muted">{client.city}</span>
@@ -149,7 +149,7 @@ export function Clients() {
               />
 
               {/* Work */}
-              <div className="mb-4">
+              <div className="mb-4 text-center">
                 <span className="font-display text-[10px] tracking-wider text-text-muted uppercase">
                   Что сделал
                 </span>
@@ -157,7 +157,7 @@ export function Clients() {
               </div>
 
               {/* Result */}
-              <div>
+              <div className="text-center">
                 <span className="font-display text-[10px] tracking-wider text-text-muted uppercase">
                   Результат
                 </span>

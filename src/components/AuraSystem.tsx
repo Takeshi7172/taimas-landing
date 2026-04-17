@@ -128,7 +128,7 @@ export function AuraSystem() {
               transition={{ duration: 0.5, delay: teamIdx * 0.1 }}
             >
               <TiltTeamCard className="glass rounded-xl p-6 md:p-7 glass-hover transition-all duration-500 h-full">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center justify-center gap-2 mb-4">
                   <motion.div
                     className="w-2 h-2 rounded-full"
                     style={{ backgroundColor: team.color, boxShadow: `0 0 8px ${team.color}66` }}
@@ -147,14 +147,14 @@ export function AuraSystem() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: teamIdx * 0.1 + agentIdx * 0.05 }}
-                      className="flex items-center gap-2 group/agent"
+                      className="flex items-center justify-center gap-2 group/agent"
                     >
                       <span className="font-display text-[10px] sm:text-xs text-text-muted group-hover/agent:text-text-dim transition-colors">@</span>
                       <span className="font-display text-xs sm:text-sm text-text-dim group-hover/agent:text-text transition-colors">{agent}</span>
                     </motion.div>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t border-border/50">
+                <div className="mt-4 pt-4 border-t border-border/50 text-center">
                   <span className="font-display text-[10px] tracking-wider text-text-muted">
                     {team.agents.length} AGENTS
                   </span>

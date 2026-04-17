@@ -28,7 +28,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="glass rounded-xl p-8 md:p-10"
         >
-          <h3 className="font-display font-semibold text-sm tracking-wider text-cyan mb-6">ДАННЫЕ</h3>
+          <h3 className="font-display font-semibold text-sm tracking-wider text-cyan mb-6 text-center">ДАННЫЕ</h3>
           <div className="space-y-6">
             {details.map((d) => (
               <div key={d.label} className="flex items-baseline justify-between gap-4 border-b border-border/50 pb-4">
@@ -43,7 +43,7 @@ export function About() {
             ))}
           </div>
 
-          <h3 className="font-display font-semibold text-sm tracking-wider text-amber mt-10 mb-8">ЯЗЫКИ</h3>
+          <h3 className="font-display font-semibold text-sm tracking-wider text-amber mt-10 mb-8 text-center">ЯЗЫКИ</h3>
           <div className="space-y-6">
             {languages.map((lang) => (
               <div key={lang.name}>
@@ -78,44 +78,44 @@ export function About() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="glass rounded-xl p-8 md:p-10"
         >
-          <h3 className="font-display font-semibold text-sm tracking-wider text-lavender mb-6">ПОДХОД</h3>
+          <h3 className="font-display font-semibold text-sm tracking-wider text-lavender mb-6 text-center">ПОДХОД</h3>
           <div className="space-y-8">
             <div>
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center justify-center gap-2 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 <span className="font-display text-sm font-semibold text-text">Маркетолог который кодит</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
                 Не просто кодер — маркетолог с 4-летним опытом. Понимаю воронки, конверсии, A/B тесты.
                 Каждый лендинг строю с точки зрения результата, не красоты ради красоты.
               </p>
             </div>
             <div>
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center justify-center gap-2 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-amber" />
                 <span className="font-display text-sm font-semibold text-text">AI как мультипликатор</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
                 Не использую AI как костыль. Построил целую систему оркестрации из 30+ агентов.
                 Каждый агент — специалист в своей области. Вместе — непобедимая команда.
               </p>
             </div>
             <div>
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center justify-center gap-2 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-lavender" />
                 <span className="font-display text-sm font-semibold text-text">Скорость без жертв</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
                 Быстро не значит плохо. TypeScript strict, SEO, Schema.org, аналитика — всё по дефолту.
                 Каждый сайт готов к работе с первого деплоя.
               </p>
             </div>
             <div>
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center justify-center gap-2 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 <span className="font-display text-sm font-semibold text-text">Build in public</span>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose pl-5">
+              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
                 Открытый GitHub. Реальные продукты. Не пустые слова — код который можно посмотреть.
               </p>
             </div>
