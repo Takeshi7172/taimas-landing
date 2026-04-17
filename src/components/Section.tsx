@@ -13,10 +13,10 @@ interface SectionProps {
 }
 
 const spacingClasses: Record<SectionSpacing, string> = {
-  hero: 'py-40 md:py-56',
-  lg: 'py-40 md:py-56',
-  md: 'py-32 md:py-44',
-  sm: 'py-24 md:py-36',
+  hero: 'py-32 md:py-44',
+  lg: 'py-28 md:py-40',
+  md: 'py-24 md:py-32',
+  sm: 'py-20 md:py-28',
 }
 
 export function Section({ id, children, className = '', fullWidth, alt, spacing = 'md' }: SectionProps) {

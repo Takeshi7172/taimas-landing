@@ -63,13 +63,13 @@ function App() {
         <Hero />
         <WhyMe />
         <Journey />
-        <div className="h-16 md:h-24" aria-hidden />
+        <div className="h-10 md:h-16" aria-hidden />
         <Projects />
         <AuraSystem />
-        <div className="h-16 md:h-24" aria-hidden />
+        <div className="h-10 md:h-16" aria-hidden />
         <TechStack />
         <Clients />
-        <div className="h-16 md:h-24" aria-hidden />
+        <div className="h-10 md:h-16" aria-hidden />
         <About />
         <Footer />
       </motion.div>
