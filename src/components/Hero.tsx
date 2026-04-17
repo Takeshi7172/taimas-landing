@@ -141,7 +141,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5 mb-12"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5 mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
           <span className="font-display text-xs tracking-wider text-cyan">OPEN TO WORK</span>
@@ -177,7 +177,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="font-body text-lg md:text-xl text-text-dim max-w-2xl mx-auto mb-16 leading-relaxed"
+          className="font-body text-lg md:text-xl text-text-dim max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           4 года в маркетинге. От графического дизайна до AI-системы из 30+ агентов.
           <br />
@@ -200,7 +200,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95 }}
-          className="mt-28 glass rounded-2xl px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-sm md:max-w-none mx-auto"
+          className="mt-16 glass rounded-2xl px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-sm md:max-w-none mx-auto"
         >
           {stats.map((stat, i) => (
             <StatCounter key={stat.label} {...stat} delay={i * 150} />
