@@ -109,7 +109,7 @@ export function Clients() {
         transition={{ duration: 0.5 }}
         className="glass rounded-xl px-6 py-6 md:px-10 md:py-8 flex flex-wrap justify-center gap-6 md:gap-10 mb-12"
       >
-        <StatItem end={15} suffix="+" label="клиентов" delay={0} enabled={statsInView} />
+        <StatItem end={20} suffix="+" label="клиентов" delay={0} enabled={statsInView} />
         <StatItem end={6} suffix="" label="ниш" delay={150} enabled={statsInView} />
         <StatItem end={3} suffix="" label="города KZ" delay={300} enabled={statsInView} />
       </motion.div>

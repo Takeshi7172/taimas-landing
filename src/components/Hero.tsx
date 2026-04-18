@@ -50,7 +50,7 @@ const stats = [
   { end: 31, suffix: '', label: 'AI-агент' },
   { end: 5, suffix: '', label: 'продуктов' },
   { end: 4, suffix: '', label: 'года опыта' },
-  { end: 15, suffix: '+', label: 'клиентов' },
+  { end: 20, suffix: '+', label: 'клиентов' },
 ]
 
 function StatCounter({ end, suffix, label, delay }: { end: number; suffix: string; label: string; delay: number }) {
