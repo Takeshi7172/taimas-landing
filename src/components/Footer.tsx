@@ -86,9 +86,24 @@ export function Footer() {
             <span className="gradient-text">{t.footer.heading2}</span>
           </h2>
 
-          <p className="font-body text-lg text-text-dim max-w-xl mx-auto mb-8 md:mb-14">
+          <p className="font-body text-lg text-text-dim max-w-xl mx-auto mb-8">
             {t.footer.subtitle}
           </p>
+
+          {/* Trust badges */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8 md:mb-14">
+            {t.footer.trustBadges.map((badge) => (
+              <span
+                key={badge}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-cyan/20 bg-cyan/5 font-body text-xs text-cyan/80"
+              >
+                <svg className="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                {badge}
+              </span>
+            ))}
+          </div>
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10 md:mb-16">

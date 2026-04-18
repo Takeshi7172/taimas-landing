@@ -138,6 +138,23 @@ export interface Translations {
     }
   }
 
+  // Comparison
+  comparison: {
+    sectionLabel: string
+    title: string
+    subtitle: string
+    columns: { criterion: string; agency: string; freelancer: string; me: string }
+    rows: { criterion: string; agency: string; freelancer: string; me: string }[]
+  }
+
+  // FAQ
+  faq: {
+    sectionLabel: string
+    title: string
+    subtitle: string
+    items: { question: string; answer: string }[]
+  }
+
   // Footer
   footer: {
     heading1: string
@@ -145,6 +162,7 @@ export interface Translations {
     subtitle: string
     telegramBtn: string
     badge: string
+    trustBadges: string[]
   }
 
   // App boot
@@ -357,12 +375,66 @@ const ru: Translations = {
     },
   },
 
+  comparison: {
+    sectionLabel: 'Сравнение',
+    title: 'Агентство vs Фрилансер vs Я',
+    subtitle: 'Честное сравнение без маркетинговых обещаний.',
+    columns: { criterion: 'Критерий', agency: 'Агентство', freelancer: 'Фрилансер', me: 'Я + AURA' },
+    rows: [
+      { criterion: 'Сроки', agency: '2-4 недели', freelancer: '1-3 недели', me: '7-10 дней' },
+      { criterion: 'Стоимость', agency: 'от 500к ₸', freelancer: 'от 150к ₸', me: 'от 180к ₸' },
+      { criterion: 'Маркетинговая экспертиза', agency: 'Есть, но шаблонно', freelancer: 'Редко', me: 'Маркетолог + инженер' },
+      { criterion: 'Техническое качество', agency: 'Зависит от команды', freelancer: '50/50', me: 'TypeScript strict, code review' },
+      { criterion: 'Коммуникация', agency: 'Через менеджера', freelancer: 'Напрямую', me: 'Напрямую, без посредников' },
+      { criterion: 'Поддержка', agency: 'По контракту', freelancer: 'Как повезёт', me: '1 мес включён' },
+      { criterion: 'Масштабируемость', agency: 'Дорого', freelancer: 'Один человек', me: 'AI-система из 30+ агентов' },
+      { criterion: 'AI-интеграции', agency: 'Нет', freelancer: 'Нет', me: 'Встроены в каждый проект' },
+    ],
+  },
+
+  faq: {
+    sectionLabel: 'Вопросы',
+    title: 'Часто задают',
+    subtitle: 'Отвечаю честно. Без уклонений.',
+    items: [
+      {
+        question: 'Качество не страдает, когда AI делает половину работы?',
+        answer: 'AI берёт на себя рутину — исследование, шаблоны, аналитику. Стратегия и контроль качества — я. TypeScript strict, code review на каждом проекте. Результат не отличается от команды из 5 человек.',
+      },
+      {
+        question: 'Один человек — это не риск?',
+        answer: 'Всё задокументировано. Код на GitHub. Три проекта в production прямо сейчас. Если что-то случится — любой разработчик подхватит за день. Это система, а не зависимость от одного человека.',
+      },
+      {
+        question: 'Сколько стоит?',
+        answer: 'Лендинг — от 180 000 ₸, 7-10 дней. CRM-система — от 400 000 ₸, 3-6 недель. Точная цена после созвона — зависит от задачи. Без скрытых платежей.',
+      },
+      {
+        question: 'Чем лучше агентства?',
+        answer: 'Без менеджеров, координаторов и трёх уровней согласования. Напрямую с человеком, который и маркетолог, и инженер. Быстрее, дешевле, и знаю что конвертит.',
+      },
+      {
+        question: 'Поддержка после запуска?',
+        answer: '1 месяц поддержки включён в каждый проект. Дальше — по договору. Баги фиксю бесплатно. Код ваш, хостинг ваш — без привязки.',
+      },
+      {
+        question: 'Как выглядит процесс работы?',
+        answer: 'Созвон 30 мин → понимаю задачу → макет за 3-5 дней → согласование → разработка → запуск. Без сюрпризов. Каждый этап — с вашим подтверждением.',
+      },
+      {
+        question: 'Работаешь только по Казахстану?',
+        answer: 'Основа — Казахстан. Но работаю удалённо с любой локацией. Часовой пояс UTC+5. Отвечаю в течение часа в рабочее время.',
+      },
+    ],
+  },
+
   footer: {
-    heading1: 'Готов ловить вайб',
-    heading2: 'твоего продукта',
-    subtitle: 'Напиши — и я покажу на деле, а не на словах.',
+    heading1: 'Есть идея продукта?',
+    heading2: 'Через 10 дней у тебя будет лендинг.',
+    subtitle: 'Расскажи задачу — отвечу честно, без обязательств.',
     telegramBtn: 'TELEGRAM',
     badge: 'Этот сайт — живой кейс. Построен на том же стеке, что и продукты для клиентов.',
+    trustBadges: ['Без предоплаты до макета', 'Созвон бесплатно', '3 проекта в production', 'Отвечу в течение часа'],
   },
 
   app: {
@@ -574,12 +646,66 @@ const en: Translations = {
     },
   },
 
+  comparison: {
+    sectionLabel: 'Comparison',
+    title: 'Agency vs Freelancer vs Me',
+    subtitle: 'An honest comparison without marketing promises.',
+    columns: { criterion: 'Criterion', agency: 'Agency', freelancer: 'Freelancer', me: 'Me + AURA' },
+    rows: [
+      { criterion: 'Timeline', agency: '2-4 weeks', freelancer: '1-3 weeks', me: '7-10 days' },
+      { criterion: 'Cost', agency: 'from 500k ₸', freelancer: 'from 150k ₸', me: 'from 180k ₸' },
+      { criterion: 'Marketing expertise', agency: 'Yes, but templated', freelancer: 'Rarely', me: 'Marketer + engineer' },
+      { criterion: 'Technical quality', agency: 'Depends on team', freelancer: '50/50', me: 'TypeScript strict, code review' },
+      { criterion: 'Communication', agency: 'Through manager', freelancer: 'Direct', me: 'Direct, no middlemen' },
+      { criterion: 'Support', agency: 'By contract', freelancer: 'Hit or miss', me: '1 month included' },
+      { criterion: 'Scalability', agency: 'Expensive', freelancer: 'One person', me: 'AI system of 30+ agents' },
+      { criterion: 'AI integrations', agency: 'No', freelancer: 'No', me: 'Built into every project' },
+    ],
+  },
+
+  faq: {
+    sectionLabel: 'FAQ',
+    title: 'Frequently Asked',
+    subtitle: 'Honest answers. No dodging.',
+    items: [
+      {
+        question: "Doesn't quality suffer when AI does half the work?",
+        answer: 'AI handles routine — research, templates, analytics. Strategy and quality control is me. TypeScript strict, code review on every project. The result is indistinguishable from a team of 5.',
+      },
+      {
+        question: "One person — isn't that a risk?",
+        answer: 'Everything is documented. Code on GitHub. Three projects in production right now. If something happens — any developer picks it up in a day. It\'s a system, not a dependency on one person.',
+      },
+      {
+        question: 'How much does it cost?',
+        answer: 'Landing page — from 180,000 ₸, 7-10 days. CRM system — from 400,000 ₸, 3-6 weeks. Exact price after a call — depends on the task. No hidden fees.',
+      },
+      {
+        question: 'Why better than an agency?',
+        answer: "No managers, coordinators, or three levels of approval. Direct with the person who's both marketer and engineer. Faster, cheaper, and I know what converts.",
+      },
+      {
+        question: 'Support after launch?',
+        answer: '1 month of support included in every project. After that — by agreement. Bugs fixed for free. Code is yours, hosting is yours — no lock-in.',
+      },
+      {
+        question: 'What does the process look like?',
+        answer: '30 min call → understand the task → mockup in 3-5 days → approval → development → launch. No surprises. Every stage — with your confirmation.',
+      },
+      {
+        question: 'Do you only work in Kazakhstan?',
+        answer: 'Base — Kazakhstan. But I work remotely with any location. UTC+5 timezone. I respond within an hour during business hours.',
+      },
+    ],
+  },
+
   footer: {
-    heading1: 'Ready to catch your',
-    heading2: "product's vibe",
-    subtitle: 'Write me — and I\'ll show you in action, not in words.',
+    heading1: 'Have a product idea?',
+    heading2: "In 10 days you'll have a landing page.",
+    subtitle: "Tell me the task — I'll answer honestly, no obligations.",
     telegramBtn: 'TELEGRAM',
     badge: 'This site is a live case study. Built on the same stack as client products.',
+    trustBadges: ['No prepayment before mockup', 'Free consultation call', '3 projects in production', 'Response within an hour'],
   },
 
   app: {
@@ -791,12 +917,66 @@ const kz: Translations = {
     },
   },
 
+  comparison: {
+    sectionLabel: 'Салыстыру',
+    title: 'Агенттік vs Фрилансер vs Мен',
+    subtitle: 'Маркетинг уәдесіз адал салыстыру.',
+    columns: { criterion: 'Критерий', agency: 'Агенттік', freelancer: 'Фрилансер', me: 'Мен + AURA' },
+    rows: [
+      { criterion: 'Мерзімдер', agency: '2-4 апта', freelancer: '1-3 апта', me: '7-10 күн' },
+      { criterion: 'Құны', agency: '500к ₸-ден', freelancer: '150к ₸-ден', me: '180к ₸-ден' },
+      { criterion: 'Маркетинг тәжірибесі', agency: 'Бар, бірақ шаблонды', freelancer: 'Сирек', me: 'Маркетолог + инженер' },
+      { criterion: 'Техникалық сапа', agency: 'Командаға байланысты', freelancer: '50/50', me: 'TypeScript strict, code review' },
+      { criterion: 'Коммуникация', agency: 'Менеджер арқылы', freelancer: 'Тікелей', me: 'Тікелей, делдалсыз' },
+      { criterion: 'Қолдау', agency: 'Келісімшарт бойынша', freelancer: 'Қалай болса солай', me: '1 ай кіреді' },
+      { criterion: 'Масштабтау', agency: 'Қымбат', freelancer: 'Бір адам', me: '30+ агенттен тұратын AI-жүйе' },
+      { criterion: 'AI-интеграциялар', agency: 'Жоқ', freelancer: 'Жоқ', me: 'Әр жобаға енгізілген' },
+    ],
+  },
+
+  faq: {
+    sectionLabel: 'Сұрақтар',
+    title: 'Жиі сұралады',
+    subtitle: 'Адал жауап. Жалтарусыз.',
+    items: [
+      {
+        question: 'AI жұмыстың жартысын жасағанда сапа нашарламай ма?',
+        answer: 'AI рутинді алады — зерттеу, шаблондар, аналитика. Стратегия мен сапаны бақылау — мен. TypeScript strict, әр жобада code review. Нәтиже 5 адамнан тұратын командадан ерекшеленбейді.',
+      },
+      {
+        question: 'Бір адам — бұл тәуекел емес пе?',
+        answer: 'Бәрі құжатталған. Код GitHub-та. Қазір production-да үш жоба. Бірдеңе болса — кез келген әзірлеуші бір күнде қабылдайды. Бұл жүйе, бір адамға тәуелділік емес.',
+      },
+      {
+        question: 'Қанша тұрады?',
+        answer: 'Лендинг — 180 000 ₸-ден, 7-10 күн. CRM-жүйе — 400 000 ₸-ден, 3-6 апта. Нақты баға қоңыраудан кейін — тапсырмаға байланысты. Жасырын төлемдер жоқ.',
+      },
+      {
+        question: 'Агенттіктен неге жақсы?',
+        answer: 'Менеджерлер, координаторлар және үш деңгейлі келісу жоқ. Маркетолог та, инженер де бір адаммен тікелей. Жылдамырақ, арзанырақ, және нені конверттейтінін білемін.',
+      },
+      {
+        question: 'Іске қосылғаннан кейін қолдау?',
+        answer: 'Әр жобаға 1 ай қолдау кіреді. Одан кейін — келісім бойынша. Қателерді тегін түзетемін. Код сіздікі, хостинг сіздікі — байланыстырмай.',
+      },
+      {
+        question: 'Жұмыс процесі қандай?',
+        answer: '30 мин қоңырау → тапсырманы түсінемін → 3-5 күнде макет → келісу → әзірлеу → іске қосу. Тосынсыйларсыз. Әр кезең — сіздің растауыңызбен.',
+      },
+      {
+        question: 'Тек Қазақстан бойынша жұмыс жасайсың ба?',
+        answer: 'Негізгі — Қазақстан. Бірақ кез келген орынмен қашықтан жұмыс жасаймын. UTC+5 уақыт белдеуі. Жұмыс уақытында бір сағат ішінде жауап беремін.',
+      },
+    ],
+  },
+
   footer: {
-    heading1: 'Өніміңіздің вайбын',
-    heading2: 'ұстауға дайынмын',
-    subtitle: 'Жазыңыз — мен сөзбен емес, іспен көрсетемін.',
+    heading1: 'Өнім идеясы бар ма?',
+    heading2: '10 күнде лендингің дайын болады.',
+    subtitle: 'Тапсырманы айтыңыз — шынайы жауап беремін, міндеттемесіз.',
     telegramBtn: 'TELEGRAM',
     badge: 'Бұл сайт — тірі кейс. Клиент өнімдерімен бірдей стекте жасалған.',
+    trustBadges: ['Макетке дейін алдын ала төлемсіз', 'Кеңес қоңырауы тегін', 'Production-да 3 жоба', 'Бір сағат ішінде жауап'],
   },
 
   app: {

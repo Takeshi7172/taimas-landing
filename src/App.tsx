@@ -9,7 +9,9 @@ import { Projects } from './components/Projects'
 import { AuraSystem } from './components/AuraSystem'
 import { TechStack } from './components/TechStack'
 import { Clients } from './components/Clients'
+import { Comparison } from './components/Comparison'
 import { About } from './components/About'
+import { FAQ } from './components/FAQ'
 import { Footer } from './components/Footer'
 import { useCursorGlow } from './hooks/useCursorGlow'
 
@@ -72,7 +74,9 @@ function App() {
         <TechStack />
         <Clients />
         <div className="h-10 md:h-16" aria-hidden />
+        <Comparison />
         <About />
+        <FAQ />
         <Footer />
       </motion.div>
     </>
