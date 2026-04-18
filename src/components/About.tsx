@@ -103,10 +103,10 @@ export function About() {
             <div>
               <div className="flex items-center justify-center gap-2 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-lavender" />
-                <span className="font-display text-sm font-semibold text-text">Скорость без жертв</span>
+                <span className="font-display text-sm font-semibold text-text">Качество по умолчанию</span>
               </div>
               <p className="font-body text-text-dim text-[15px] leading-loose text-center">
-                Быстро не значит плохо. TypeScript strict, SEO, Schema.org, аналитика — всё по дефолту.
+                TypeScript strict, SEO, Schema.org, аналитика — это не опции. Это мой стандарт на каждом проекте, независимо от бюджета.
                 Каждый сайт готов к работе с первого деплоя.
               </p>
             </div>
@@ -117,6 +117,16 @@ export function About() {
               </div>
               <p className="font-body text-text-dim text-[15px] leading-loose text-center">
                 Открытый GitHub. Реальные продукты. Не пустые слова — код который можно посмотреть.
+              </p>
+            </div>
+            <div>
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-amber" />
+                <span className="font-display text-sm font-semibold text-text">Один вместо штата</span>
+              </div>
+              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
+                Не агентство с менеджерами и координаторами. Один человек с AI-системой из 31 агента.
+                Это не просто слова — это реальные проекты в production и отработанная на деле система.
               </p>
             </div>
           </div>

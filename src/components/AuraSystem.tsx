@@ -81,7 +81,7 @@ export function AuraSystem() {
         Она оркестрирует разработку, маркетинг, продажи и операции.
       </p>
       <p className="text-text-dim text-lg leading-loose max-w-3xl mx-auto text-center mb-12 md:mb-20">
-        <span className="text-amber">Вот почему я могу делать 7-10 лендингов в день.</span>
+        <span className="text-amber">Вот почему каждый проект получает глубину команды — при работе с одним человеком.</span>
       </p>
 
       {/* Orchestrator visualization */}

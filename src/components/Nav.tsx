@@ -117,6 +117,14 @@ export function Nav() {
           >
             НАПИСАТЬ В TELEGRAM
           </a>
+          <a
+            href="https://wa.me/77054443231"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center px-4 py-3 border border-border-light text-text font-display text-sm tracking-wider rounded-lg hover:border-green-500/50 hover:text-green-400 transition-all"
+          >
+            WHATSAPP
+          </a>
         </motion.div>
       )}
     </motion.nav>
