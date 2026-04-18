@@ -4,7 +4,7 @@ import { useInView } from '../hooks/useInView'
 import { useCountUp } from '../hooks/useCountUp'
 import { useMagneticButton } from '../hooks/useMagneticButton'
 
-const TYPED_TEXT = 'Строю AI-продукты, которые работают без меня.'
+const TYPED_TEXT = 'Один человек. AI-система. Результат целой команды.'
 const TYPING_DELAY = 1200
 
 function TypedSubtitle() {
