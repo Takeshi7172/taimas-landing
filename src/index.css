@@ -103,6 +103,20 @@ body {
   z-index: 9999;
 }
 
+@media (max-width: 768px) {
+  .mesh-orb {
+    display: none;
+  }
+
+  .noise::before {
+    display: none;
+  }
+
+  .scanline::after {
+    display: none;
+  }
+}
+
 @keyframes meshFloat {
   0%, 100% { transform: translate(0, 0) scale(1); }
   25% { transform: translate(30px, -20px) scale(1.05); }

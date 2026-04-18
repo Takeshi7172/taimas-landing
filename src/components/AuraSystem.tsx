@@ -80,7 +80,7 @@ export function AuraSystem() {
         Я построил AI-систему из <span className="text-cyan font-semibold">30+ специализированных агентов</span>.
         Она оркестрирует разработку, маркетинг, продажи и операции.
       </p>
-      <p className="text-text-dim text-lg leading-loose max-w-3xl mx-auto text-center mb-20">
+      <p className="text-text-dim text-lg leading-loose max-w-3xl mx-auto text-center mb-12 md:mb-20">
         <span className="text-amber">Вот почему я могу делать 7-10 лендингов в день.</span>
       </p>
 

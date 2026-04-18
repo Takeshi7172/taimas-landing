@@ -26,7 +26,7 @@ export function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass rounded-xl p-8 md:p-10"
+          className="glass rounded-xl p-6 md:p-10"
         >
           <h3 className="font-display font-semibold text-sm tracking-wider text-cyan mb-6 text-center">ДАННЫЕ</h3>
           <div className="space-y-6">
@@ -76,7 +76,7 @@ export function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="glass rounded-xl p-8 md:p-10"
+          className="glass rounded-xl p-6 md:p-10"
         >
           <h3 className="font-display font-semibold text-sm tracking-wider text-lavender mb-6 text-center">ПОДХОД</h3>
           <div className="space-y-8">

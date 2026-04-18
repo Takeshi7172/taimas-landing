@@ -4,6 +4,9 @@ export function useCursorGlow() {
   const glowRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
+    // Early return for touch devices — cursor glow is useless on touch screens
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return
+
     const el = document.createElement('div')
     el.id = 'cursor-glow'
     el.style.cssText = `
