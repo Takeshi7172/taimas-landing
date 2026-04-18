@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { Section, SectionLabel, SectionTitle } from './Section'
 import { useTilt } from '../hooks/useTilt'
+import { useTranslation } from '../i18n/useTranslation'
 import type { ReactNode } from 'react'
 
 const agentTeams = [
@@ -47,7 +48,6 @@ function DataFlowLine({ color, delay }: DataFlowLineProps) {
 interface TiltCardProps {
   children: ReactNode
   className?: string
-  color?: string
 }
 
 function TiltTeamCard({ children, className = '' }: TiltCardProps) {
@@ -66,6 +66,8 @@ function TiltTeamCard({ children, className = '' }: TiltCardProps) {
 }
 
 export function AuraSystem() {
+  const t = useTranslation()
+
   return (
     <Section id="aura" alt spacing="lg">
       {/* Background accent */}
@@ -74,14 +76,15 @@ export function AuraSystem() {
         <div className="mesh-orb w-[400px] h-[400px] bg-lavender/8 bottom-[10%] right-[-5%]" style={{ animationDelay: '-8s' }} />
       </div>
 
-      <SectionLabel>Секретное оружие</SectionLabel>
-      <SectionTitle>AURA System</SectionTitle>
+      <SectionLabel>{t.aura.sectionLabel}</SectionLabel>
+      <SectionTitle>{t.aura.title}</SectionTitle>
       <p className="text-text-dim text-lg leading-loose max-w-3xl mx-auto text-center mb-8">
-        Я построил AI-систему из <span className="text-cyan font-semibold">30+ специализированных агентов</span>.
-        Она оркестрирует разработку, маркетинг, продажи и операции.
+        {t.aura.descriptionLine1Before}
+        <span className="text-cyan font-semibold">{t.aura.descriptionLine1Accent}</span>
+        {t.aura.descriptionLine1After}
       </p>
       <p className="text-text-dim text-lg leading-loose max-w-3xl mx-auto text-center mb-12 md:mb-20">
-        <span className="text-amber">Не замена людей. Расширение одного человека до целой команды.</span>
+        <span className="text-amber">{t.aura.descriptionLine2}</span>
       </p>
 
       {/* Orchestrator visualization */}
@@ -175,7 +178,7 @@ export function AuraSystem() {
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border bg-void-light">
             <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
             <span className="font-display text-sm text-text-dim">
-              <span className="text-cyan font-semibold">30+</span> агентов работают как единая система
+              <span className="text-cyan font-semibold">{t.aura.agentCount}</span> {t.aura.agentsLabel}
             </span>
           </div>
         </motion.div>

@@ -1,60 +1,59 @@
 import { motion } from 'motion/react'
 import { Section, SectionLabel, SectionTitle } from './Section'
+import { useTranslation } from '../i18n/useTranslation'
 
-const steps = [
+type StepKey = 'graphicDesign' | 'motionDesign' | 'targeting' | 'googleAds' | 'vibeCoding' | 'aiArchitecture'
+
+const stepMeta: { key: StepKey; year: string; tags: string[]; color: string }[] = [
   {
+    key: 'graphicDesign',
     year: '2022',
-    title: 'Графический дизайн',
-    desc: 'Начал с визуала. Figma, Photoshop, брендинг.',
     tags: ['Figma', 'Photoshop', 'Illustrator'],
     color: '#8B5CF6',
   },
   {
+    key: 'motionDesign',
     year: '2023',
-    title: 'Моушн дизайн',
-    desc: 'After Effects, анимация, видео-контент для брендов.',
     tags: ['After Effects', 'Premiere Pro', 'Motion'],
     color: '#A78BFA',
   },
   {
+    key: 'targeting',
     year: '2023',
-    title: 'Таргетированная реклама',
-    desc: 'Facebook Ads, Instagram Ads. Первые бюджеты, первые результаты.',
     tags: ['Meta Ads', 'Instagram', 'Targeting'],
     color: '#00F0FF',
   },
   {
+    key: 'googleAds',
     year: '2024',
-    title: 'Google Ads + Аналитика',
-    desc: 'Performance маркетинг. GA4, отслеживание конверсий, оптимизация.',
     tags: ['Google Ads', 'GA4', 'GTM'],
     color: '#06B6D4',
   },
   {
+    key: 'vibeCoding',
     year: '2025',
-    title: 'Vibe Coding',
-    desc: 'Next.js, React, TypeScript. От идеи до production за дни, не месяцы.',
     tags: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
     color: '#FFB800',
   },
   {
+    key: 'aiArchitecture',
     year: '2026',
-    title: 'AI Architecture',
-    desc: '30+ AI-агентов. Система AURA. Оркестрация dev, marketing, sales.',
     tags: ['Claude', 'RAG', 'Multi-Agent', 'AURA'],
     color: '#FF6B00',
   },
 ]
 
 export function Journey() {
+  const t = useTranslation()
+
   return (
     <Section id="journey" alt spacing="lg">
-      <SectionLabel>Путь</SectionLabel>
+      <SectionLabel>{t.journey.sectionLabel}</SectionLabel>
       <SectionTitle>
-        <span className="gradient-text">Эволюция</span>
+        <span className="gradient-text">{t.journey.titleWord}</span>
       </SectionTitle>
       <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-16">
-        От пикселей до AI-систем. Каждый этап — фундамент для следующего.
+        {t.journey.subtitle}
       </p>
 
       <div className="relative">
@@ -63,11 +62,12 @@ export function Journey() {
           <div className="timeline-line w-full h-full opacity-40" />
         </div>
 
-        {steps.map((step, i) => {
+        {stepMeta.map((step, i) => {
           const isLeft = i % 2 === 0
+          const stepT = t.journey.steps[step.key]
           return (
             <motion.div
-              key={`${step.year}-${step.title}`}
+              key={`${step.year}-${step.key}`}
               initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -90,8 +90,8 @@ export function Journey() {
                       {step.year}
                     </span>
                   </div>
-                  <h3 className="font-display font-semibold text-xl text-text mb-3">{step.title}</h3>
-                  <p className="font-body text-text-dim mb-5">{step.desc}</p>
+                  <h3 className="font-display font-semibold text-xl text-text mb-3">{stepT.title}</h3>
+                  <p className="font-body text-text-dim mb-5">{stepT.desc}</p>
                   <div className={`flex flex-wrap gap-2 ${isLeft ? 'md:justify-end' : 'md:justify-start'}`}>
                     {step.tags.map((tag) => (
                       <span key={tag} className="tag">{tag}</span>

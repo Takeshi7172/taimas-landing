@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { Section, SectionLabel, SectionTitle } from './Section'
 import { useTilt } from '../hooks/useTilt'
+import { useTranslation } from '../i18n/useTranslation'
 import type { ReactNode } from 'react'
 
 const stackGroups = [
@@ -57,12 +58,14 @@ function TiltCard({ children, className = '' }: TiltCardProps) {
 }
 
 export function TechStack() {
+  const t = useTranslation()
+
   return (
     <Section id="stack" spacing="sm">
-      <SectionLabel>Инструменты</SectionLabel>
-      <SectionTitle>Tech Stack</SectionTitle>
+      <SectionLabel>{t.techStack.sectionLabel}</SectionLabel>
+      <SectionTitle>{t.techStack.title}</SectionTitle>
       <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-10">
-        Полный стек от дизайна до деплоя. Маркетинг + разработка + AI в одном человеке.
+        {t.techStack.subtitle}
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">

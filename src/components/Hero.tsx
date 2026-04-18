@@ -3,22 +3,31 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import { useInView } from '../hooks/useInView'
 import { useCountUp } from '../hooks/useCountUp'
 import { useMagneticButton } from '../hooks/useMagneticButton'
+import { useTranslation } from '../i18n/useTranslation'
 
-const TYPED_TEXT = 'Один человек. AI-система. Результат целой команды.'
 const TYPING_DELAY = 1200
 
-function TypedSubtitle() {
+interface TypedSubtitleProps {
+  text: string
+}
+
+function TypedSubtitle({ text }: TypedSubtitleProps) {
   const [displayed, setDisplayed] = useState('')
   const [showCursor, setShowCursor] = useState(true)
   const [done, setDone] = useState(false)
   const indexRef = useRef(0)
 
+  // Reset and retype when text changes (locale switch)
   useEffect(() => {
+    setDisplayed('')
+    setDone(false)
+    indexRef.current = 0
+
     const startTimeout = setTimeout(() => {
       const interval = setInterval(() => {
         indexRef.current += 1
-        setDisplayed(TYPED_TEXT.slice(0, indexRef.current))
-        if (indexRef.current >= TYPED_TEXT.length) {
+        setDisplayed(text.slice(0, indexRef.current))
+        if (indexRef.current >= text.length) {
           clearInterval(interval)
           setDone(true)
         }
@@ -27,7 +36,7 @@ function TypedSubtitle() {
     }, TYPING_DELAY)
 
     return () => clearTimeout(startTimeout)
-  }, [])
+  }, [text])
 
   useEffect(() => {
     if (done) return
@@ -46,14 +55,14 @@ function TypedSubtitle() {
   )
 }
 
-const stats = [
-  { end: 31, suffix: '', label: 'AI-агент' },
-  { end: 5, suffix: '', label: 'продуктов' },
-  { end: 4, suffix: '', label: 'года опыта' },
-  { end: 20, suffix: '+', label: 'клиентов' },
-]
+interface StatCounterProps {
+  end: number
+  suffix: string
+  label: string
+  delay: number
+}
 
-function StatCounter({ end, suffix, label, delay }: { end: number; suffix: string; label: string; delay: number }) {
+function StatCounter({ end, suffix, label, delay }: StatCounterProps) {
   const { ref, isInView } = useInView(0.5)
   const count = useCountUp({ end, duration: 1600, startDelay: delay, enabled: isInView })
 
@@ -68,7 +77,7 @@ function StatCounter({ end, suffix, label, delay }: { end: number; suffix: strin
   )
 }
 
-function TelegramButton() {
+function TelegramButton({ label }: { label: string }) {
   const { ref, onMouseMove, onMouseLeave } = useMagneticButton({ strength: 0.3 })
   return (
     <a
@@ -80,7 +89,7 @@ function TelegramButton() {
       onMouseLeave={onMouseLeave}
       className="group relative inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-cyan text-void font-display font-semibold text-sm tracking-wider rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_#00F0FF44] will-change-transform"
     >
-      <span className="relative z-10">НАПИСАТЬ В TELEGRAM</span>
+      <span className="relative z-10">{label}</span>
       <svg className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
       </svg>
@@ -134,6 +143,14 @@ export function Hero() {
   const orb1Y = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])
   const orb2Y = useTransform(scrollYProgress, [0, 1], ['0%', '-18%'])
   const orb3Y = useTransform(scrollYProgress, [0, 1], ['0%', '-40%'])
+  const t = useTranslation()
+
+  const stats = [
+    { end: 31, suffix: '', label: t.hero.stats.agents },
+    { end: 5, suffix: '', label: t.hero.stats.products },
+    { end: 4, suffix: '', label: t.hero.stats.years },
+    { end: 20, suffix: '+', label: t.hero.stats.clients },
+  ]
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden">
@@ -164,7 +181,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/30 bg-cyan/5 mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-          <span className="font-display text-xs tracking-wider text-cyan">OPEN TO WORK</span>
+          <span className="font-display text-xs tracking-wider text-cyan">{t.hero.openToWork}</span>
         </motion.div>
 
         {/* Name */}
@@ -199,9 +216,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="font-body text-lg md:text-xl text-text-dim max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          4 года в маркетинге. От графического дизайна до AI-системы из 30+ агентов.
+          {t.hero.subtitle}
           <br />
-          <TypedSubtitle />
+          <TypedSubtitle text={t.hero.lead} />
         </motion.p>
 
         {/* CTA Buttons */}
@@ -211,7 +228,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.75 }}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <TelegramButton />
+          <TelegramButton label={t.hero.telegramBtn} />
           <WhatsAppButton />
           <GithubButton />
         </motion.div>

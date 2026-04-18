@@ -1,23 +1,35 @@
 import { motion } from 'motion/react'
 import { Section, SectionLabel, SectionTitle } from './Section'
-
-const details = [
-  { label: 'Возраст', value: '29 лет', sub: '06.09.1996' },
-  { label: 'Локация', value: 'Казахстан', sub: '' },
-  { label: 'Образование', value: 'Менеджмент', sub: 'высшее' },
-]
-
-const languages = [
-  { name: 'Русский', level: 'Носитель', pct: 100 },
-  { name: 'Казахский', level: 'Носитель', pct: 100 },
-  { name: 'Английский', level: 'Intermediate', pct: 55 },
-]
+import { useTranslation } from '../i18n/useTranslation'
 
 export function About() {
+  const t = useTranslation()
+  const a = t.about
+
+  const details = [
+    { label: a.details.age.label, value: a.details.age.value, sub: '' },
+    { label: a.details.location.label, value: a.details.location.value, sub: '' },
+    { label: a.details.education.label, value: a.details.education.value, sub: a.details.education.sub },
+  ]
+
+  const languages = [
+    { name: a.languages.russian.name, level: a.languages.russian.level, pct: 100 },
+    { name: a.languages.kazakh.name, level: a.languages.kazakh.level, pct: 100 },
+    { name: a.languages.english.name, level: a.languages.english.level, pct: 55 },
+  ]
+
+  const philosophy = [
+    { dotColor: 'bg-cyan', title: a.philosophy.marketerWhoCode.title, text: a.philosophy.marketerWhoCode.text },
+    { dotColor: 'bg-amber', title: a.philosophy.aiMultiplier.title, text: a.philosophy.aiMultiplier.text },
+    { dotColor: 'bg-lavender', title: a.philosophy.qualityDefault.title, text: a.philosophy.qualityDefault.text },
+    { dotColor: 'bg-cyan', title: a.philosophy.buildInPublic.title, text: a.philosophy.buildInPublic.text },
+    { dotColor: 'bg-amber', title: a.philosophy.oneVsTeam.title, text: a.philosophy.oneVsTeam.text },
+  ]
+
   return (
     <Section id="about" spacing="md">
-      <SectionLabel>Обо мне</SectionLabel>
-      <SectionTitle>Человек за системой</SectionTitle>
+      <SectionLabel>{a.sectionLabel}</SectionLabel>
+      <SectionTitle>{a.title}</SectionTitle>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-12">
         {/* Left: details */}
@@ -28,7 +40,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="glass rounded-xl p-6 md:p-10"
         >
-          <h3 className="font-display font-semibold text-sm tracking-wider text-cyan mb-6 text-center">ДАННЫЕ</h3>
+          <h3 className="font-display font-semibold text-sm tracking-wider text-cyan mb-6 text-center">{a.dataLabel}</h3>
           <div className="space-y-6">
             {details.map((d) => (
               <div key={d.label} className="flex items-baseline justify-between gap-4 border-b border-border/50 pb-4">
@@ -43,7 +55,7 @@ export function About() {
             ))}
           </div>
 
-          <h3 className="font-display font-semibold text-sm tracking-wider text-amber mt-10 mb-8 text-center">ЯЗЫКИ</h3>
+          <h3 className="font-display font-semibold text-sm tracking-wider text-amber mt-10 mb-8 text-center">{a.languagesLabel}</h3>
           <div className="space-y-6">
             {languages.map((lang) => (
               <div key={lang.name}>
@@ -78,57 +90,19 @@ export function About() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="glass rounded-xl p-6 md:p-10"
         >
-          <h3 className="font-display font-semibold text-sm tracking-wider text-lavender mb-6 text-center">ПОДХОД</h3>
+          <h3 className="font-display font-semibold text-sm tracking-wider text-lavender mb-6 text-center">{a.approachLabel}</h3>
           <div className="space-y-8">
-            <div>
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan" />
-                <span className="font-display text-sm font-semibold text-text">Маркетолог который кодит</span>
+            {philosophy.map((item) => (
+              <div key={item.title}>
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <div className={`w-1.5 h-1.5 rounded-full ${item.dotColor}`} />
+                  <span className="font-display text-sm font-semibold text-text">{item.title}</span>
+                </div>
+                <p className="font-body text-text-dim text-[15px] leading-loose text-center">
+                  {item.text}
+                </p>
               </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
-                Не просто кодер — маркетолог с 4-летним опытом. Понимаю воронки, конверсии, A/B тесты.
-                Каждый лендинг строю с точки зрения результата, не красоты ради красоты.
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber" />
-                <span className="font-display text-sm font-semibold text-text">AI как мультипликатор</span>
-              </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
-                Не использую AI как костыль. Построил целую систему оркестрации из 30+ агентов.
-                Каждый агент — специалист в своей области. Вместе — непобедимая команда.
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-lavender" />
-                <span className="font-display text-sm font-semibold text-text">Качество по умолчанию</span>
-              </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
-                TypeScript strict, SEO, Schema.org, аналитика — это не опции. Это мой стандарт на каждом проекте, независимо от бюджета.
-                Каждый сайт готов к работе с первого деплоя.
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan" />
-                <span className="font-display text-sm font-semibold text-text">Build in public</span>
-              </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
-                Открытый GitHub. Реальные продукты. Не пустые слова — код который можно посмотреть.
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber" />
-                <span className="font-display text-sm font-semibold text-text">Один вместо штата</span>
-              </div>
-              <p className="font-body text-text-dim text-[15px] leading-loose text-center">
-                Не агентство с менеджерами и координаторами. Один человек с AI-системой из 31 агента.
-                Это не просто слова — это реальные проекты в production и отработанная на деле система.
-              </p>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>

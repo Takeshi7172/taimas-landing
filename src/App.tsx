@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
+import { useTranslation } from './i18n'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { WhyMe } from './components/WhyMe'
@@ -16,6 +17,7 @@ const BOOT_DURATION = 1400
 
 function App() {
   const [booted, setBooted] = useState(false)
+  const t = useTranslation()
   useCursorGlow()
 
   useEffect(() => {
@@ -45,7 +47,7 @@ function App() {
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
               >
-                SYSTEM BOOT...
+                {t.app.systemBoot}
               </motion.span>
             </motion.div>
           </motion.div>

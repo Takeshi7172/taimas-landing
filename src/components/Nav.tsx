@@ -2,17 +2,14 @@ import { useState, useEffect } from 'react'
 import { motion } from 'motion/react'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { useMagneticButton } from '../hooks/useMagneticButton'
+import { useTranslation } from '../i18n/useTranslation'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { Locale } from '../i18n/translations'
 
-const links = [
-  { href: '#why', label: 'Почему я', id: 'why' },
-  { href: '#journey', label: 'Путь', id: 'journey' },
-  { href: '#projects', label: 'Проекты', id: 'projects' },
-  { href: '#aura', label: 'AURA', id: 'aura' },
-  { href: '#stack', label: 'Стек', id: 'stack' },
-  { href: '#about', label: 'Обо мне', id: 'about' },
-]
+const NAV_IDS = ['why', 'journey', 'projects', 'aura', 'stack', 'about'] as const
+const LOCALES: Locale[] = ['ru', 'kz', 'en']
 
-function ContactButton() {
+function ContactButton({ label }: { label: string }) {
   const { ref, onMouseMove, onMouseLeave } = useMagneticButton({ strength: 0.4 })
   return (
     <a
@@ -24,8 +21,33 @@ function ContactButton() {
       onMouseLeave={onMouseLeave}
       className="ml-2 px-4 py-2 bg-cyan/10 border border-cyan/30 text-cyan font-display text-xs tracking-wider rounded-lg hover:bg-cyan/20 transition-all will-change-transform"
     >
-      КОНТАКТ
+      {label}
     </a>
+  )
+}
+
+interface LanguageSwitcherProps {
+  className?: string
+}
+
+function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
+  const { locale, setLocale } = useLanguage()
+  return (
+    <div className={`flex items-center gap-1 ${className}`}>
+      {LOCALES.map((lang) => (
+        <button
+          key={lang}
+          onClick={() => setLocale(lang)}
+          className={`font-display text-[10px] tracking-wider px-2 py-1 rounded transition-colors ${
+            locale === lang
+              ? 'text-cyan bg-cyan/10'
+              : 'text-text-muted hover:text-text'
+          }`}
+        >
+          {lang.toUpperCase()}
+        </button>
+      ))}
+    </div>
   )
 }
 
@@ -33,6 +55,16 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const active = useActiveSection()
+  const t = useTranslation()
+
+  const links = [
+    { href: '#why', label: t.nav.links.why, id: 'why' },
+    { href: '#journey', label: t.nav.links.journey, id: 'journey' },
+    { href: '#projects', label: t.nav.links.projects, id: 'projects' },
+    { href: '#aura', label: t.nav.links.aura, id: 'aura' },
+    { href: '#stack', label: t.nav.links.stack, id: 'stack' },
+    { href: '#about', label: t.nav.links.about, id: 'about' },
+  ] satisfies { href: string; label: string; id: typeof NAV_IDS[number] }[]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -77,7 +109,8 @@ export function Nav() {
               )}
             </a>
           ))}
-          <ContactButton />
+          <LanguageSwitcher className="ml-2" />
+          <ContactButton label={t.nav.contact} />
         </div>
 
         {/* Mobile menu button */}
@@ -97,6 +130,7 @@ export function Nav() {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-void-light/95 backdrop-blur-xl border-b border-border px-6 py-6 space-y-4"
         >
+          <LanguageSwitcher className="mb-2" />
           {links.map((link) => (
             <a
               key={link.href}
@@ -115,7 +149,7 @@ export function Nav() {
             rel="noopener noreferrer"
             className="block w-full text-center px-4 py-3 bg-cyan text-void font-display text-sm tracking-wider rounded-lg"
           >
-            НАПИСАТЬ В TELEGRAM
+            {t.nav.writeTelegram}
           </a>
           <a
             href="https://wa.me/77054443231"
@@ -123,7 +157,7 @@ export function Nav() {
             rel="noopener noreferrer"
             className="block w-full text-center px-4 py-3 border border-border-light text-text font-display text-sm tracking-wider rounded-lg hover:border-green-500/50 hover:text-green-400 transition-all"
           >
-            WHATSAPP
+            {t.nav.whatsapp}
           </a>
         </motion.div>
       )}

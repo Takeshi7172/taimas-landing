@@ -1,7 +1,8 @@
 import { motion } from 'motion/react'
 import { useMagneticButton } from '../hooks/useMagneticButton'
+import { useTranslation } from '../i18n/useTranslation'
 
-function TelegramButton() {
+function TelegramButton({ label }: { label: string }) {
   const { ref, onMouseMove, onMouseLeave } = useMagneticButton({ strength: 0.3 })
   return (
     <a
@@ -13,7 +14,7 @@ function TelegramButton() {
       onMouseLeave={onMouseLeave}
       className="group inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-cyan text-void font-display font-semibold text-sm tracking-wider rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_#00F0FF44] will-change-transform"
     >
-      TELEGRAM
+      {label}
       <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
       </svg>
@@ -62,6 +63,8 @@ function WhatsAppButton() {
 }
 
 export function Footer() {
+  const t = useTranslation()
+
   return (
     <footer className="relative pt-20 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       {/* Top accent line */}
@@ -78,18 +81,18 @@ export function Footer() {
         >
           {/* CTA heading */}
           <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-text mb-6 tracking-tight">
-            Готов ловить вайб
+            {t.footer.heading1}
             <br />
-            <span className="gradient-text">твоего продукта</span>
+            <span className="gradient-text">{t.footer.heading2}</span>
           </h2>
 
           <p className="font-body text-lg text-text-dim max-w-xl mx-auto mb-8 md:mb-14">
-            Напиши — и я покажу на деле, а не на словах.
+            {t.footer.subtitle}
           </p>
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10 md:mb-16">
-            <TelegramButton />
+            <TelegramButton label={t.footer.telegramBtn} />
             <WhatsAppButton />
             <GithubButton />
           </div>
@@ -108,7 +111,7 @@ export function Footer() {
           {/* Built with badge */}
           <div className="mt-20 pt-8 border-t border-border/30">
             <span className="font-display text-[10px] tracking-[0.3em] text-text-muted uppercase">
-              Этот сайт — живой кейс. Построен на том же стеке, что и продукты для клиентов.
+              {t.footer.badge}
             </span>
           </div>
         </motion.div>

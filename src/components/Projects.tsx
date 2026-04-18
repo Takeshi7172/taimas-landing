@@ -1,12 +1,24 @@
 import { motion } from 'motion/react'
 import { Section, SectionLabel, SectionTitle } from './Section'
 import { useTilt } from '../hooks/useTilt'
+import { useTranslation } from '../i18n/useTranslation'
 
-const projects = [
+type ProjectKey = 'elfin' | 'instrumental' | 'mycheck' | 'aura'
+
+const projectsMeta: {
+  key: ProjectKey
+  name: string
+  type: string
+  tags: string[]
+  status: 'LIVE' | 'IN DEV'
+  url: string
+  gradient: string
+  accentColor: string
+}[] = [
   {
+    key: 'elfin',
     name: 'elfin.kz',
     type: 'CRM + Landing',
-    description: 'CRM + лендинг для финтех-брокера. Full-stack: FastAPI + Next.js + Telegram bot + PostgreSQL.',
     tags: ['FastAPI', 'Next.js', 'aiogram', 'PostgreSQL', 'Vercel'],
     status: 'LIVE',
     url: 'https://elfin.kz',
@@ -14,9 +26,9 @@ const projects = [
     accentColor: '#00F0FF',
   },
   {
+    key: 'instrumental',
     name: 'instrumental.kz',
     type: 'E-Commerce',
-    description: 'Каталог аренды инструментов. Next.js SSG. 70+ позиций. SEO optimized. Schema.org.',
     tags: ['Next.js 15', 'SSG', 'SEO', 'Schema.org', 'GA4'],
     status: 'LIVE',
     url: 'https://instrumental.kz',
@@ -24,9 +36,9 @@ const projects = [
     accentColor: '#FFB800',
   },
   {
+    key: 'mycheck',
     name: 'mycheck.kz',
     type: 'Fintech Landing',
-    description: 'Финтех лендинг. Premium dark UI. React + Vite + Supabase. Revolut-level дизайн.',
     tags: ['React', 'Vite', 'Supabase', 'Tailwind', 'shadcn/ui'],
     status: 'LIVE',
     url: '#',
@@ -34,9 +46,9 @@ const projects = [
     accentColor: '#8B5CF6',
   },
   {
+    key: 'aura',
     name: 'AURA Analytics',
     type: 'SaaS Platform',
-    description: 'Аналитическая платформа. Next.js 16 + Supabase + Windsor.ai. Dashboard для рекламных данных.',
     tags: ['Next.js 16', 'Supabase', 'Recharts', 'Windsor.ai', 'RLS'],
     status: 'IN DEV',
     url: '#',
@@ -46,10 +58,11 @@ const projects = [
 ]
 
 interface ProjectCardInnerProps {
-  project: typeof projects[number]
+  project: typeof projectsMeta[number]
+  description: string
 }
 
-function ProjectCardInner({ project }: ProjectCardInnerProps) {
+function ProjectCardInner({ project, description }: ProjectCardInnerProps) {
   const { ref, onMouseMove, onMouseLeave } = useTilt({ maxDeg: 4 })
 
   return (
@@ -137,7 +150,7 @@ function ProjectCardInner({ project }: ProjectCardInnerProps) {
           </h3>
           <span className="font-display text-xs text-text-muted tracking-wider">{project.type}</span>
         </div>
-        <p className="font-body text-text-dim mb-5 leading-relaxed text-center">{project.description}</p>
+        <p className="font-body text-text-dim mb-5 leading-relaxed text-center">{description}</p>
         <div className="flex flex-wrap gap-2 justify-center">
           {project.tags.map((tag) => (
             <span key={tag} className="tag">{tag}</span>
@@ -149,16 +162,18 @@ function ProjectCardInner({ project }: ProjectCardInnerProps) {
 }
 
 export function Projects() {
+  const t = useTranslation()
+
   return (
     <Section id="projects" spacing="md">
-      <SectionLabel>Портфолио</SectionLabel>
-      <SectionTitle>Что я построил</SectionTitle>
+      <SectionLabel>{t.projects.sectionLabel}</SectionLabel>
+      <SectionTitle>{t.projects.title}</SectionTitle>
       <p className="text-text-dim text-lg leading-loose max-w-2xl mx-auto text-center mb-12">
-        Реальные продукты в production. Не учебные проекты — рабочий бизнес.
+        {t.projects.subtitle}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {projects.map((project, i) => (
+        {projectsMeta.map((project, i) => (
           <motion.a
             key={project.name}
             href={project.url}
@@ -170,7 +185,10 @@ export function Projects() {
             transition={{ duration: 0.6, delay: i * 0.12 }}
             className="block"
           >
-            <ProjectCardInner project={project} />
+            <ProjectCardInner
+              project={project}
+              description={t.projects.items[project.key].description}
+            />
           </motion.a>
         ))}
       </div>
